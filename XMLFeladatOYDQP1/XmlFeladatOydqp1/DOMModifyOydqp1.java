@@ -4,6 +4,11 @@ import java.io.*;
 import java.text.ParseException;
 
 import javax.xml.parsers.*;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 
 import org.w3c.dom.*;
@@ -12,7 +17,7 @@ import org.xml.sax.*;
 
 public class DOMModifyOydqp1 {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException,
-            XPathExpressionException, DOMException, ParseException {
+            XPathExpressionException, DOMException, ParseException, TransformerException {
         // XML fájl betárolása
         File xml = new File("XMLOYDQP1.xml");
 
@@ -33,6 +38,13 @@ public class DOMModifyOydqp1 {
 
         // rekurzív DOM bejárás 
         DomTraverser.traverseLevel(walker, "");
+
+        //modositott XML létrehozása XMLOydqp1.updated.xml fájlként
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(document);
+        StreamResult result = new StreamResult(new File("XMLOydqp1.updated.xml"));
+        transformer.transform(source, result);
     }
 
     private static class DomModifier {
@@ -119,4 +131,5 @@ public class DOMModifyOydqp1 {
             }
         }
     }
+   
 }
