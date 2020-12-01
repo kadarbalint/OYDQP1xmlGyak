@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mikulaslogisztikaihivatal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="XMLSchemaOydqp1.xsd">
+<kozpontok>
+    
+    <kozpont id ="1111">
+        <szankokszama>1</szankokszama>
+        <lokacio>Rénszarvasistálló</lokacio>
+         <elerheto_e>1</elerheto_e>
+    </kozpont>
+    <kozpont id = "1222">
+        <szankokszama>3</szankokszama>
+        <lokacio>Mézeskalácsudvar</lokacio>
+         <elerheto_e>1</elerheto_e>
+    </kozpont>
+    <kozpont id ="1333">
+        <szankokszama>4</szankokszama>
+        <lokacio>Gumicukorműhely</lokacio>
+         <elerheto_e>1</elerheto_e>
+    </kozpont>
+    <kozpont id ="1444">
+        <szankokszama>2</szankokszama>
+        <lokacio>Virgácsfa</lokacio>
+         <elerheto_e>0</elerheto_e>
+    </kozpont>
+    <kozpont id ="1555">
+        <szankokszama>1</szankokszama>
+        <lokacio>Gyümölcsudvar</lokacio>
+         <elerheto_e>1</elerheto_e>
+    </kozpont>
+</kozpontok>
+
+<pilotak>
+    <pilota id ="0">
+        <nev>Télapó</nev>
+        <repultido>302</repultido>
+    </pilota>
+
+     <pilota id ="1">
+        <nev>Télapó</nev>
+        <repultido>302</repultido>
+     </pilota>
+
+    <pilota id ="2">
+        <nev>Télapó</nev>
+        <repultido>302</repultido>
+     </pilota>
+
+    <pilota id ="3">
+        <nev>Télapó</nev>
+         <repultido>302</repultido>
+    </pilota>
+
+    <pilota id ="4">
+        <nev>Télapó</nev>
+         <repultido>302</repultido>
+    </pilota>
+
+    <pilota id ="5">
+        <nev>Télapó</nev>
+         <repultido>302</repultido>
+    </pilota>
+</pilotak>
+
+
+<jarmuvek>
+    <jarmu id="3000" kozpontid="1111">
+       
+        <futasteljesitmeny>1128111</futasteljesitmeny>
+        <uzemanyagszint>70</uzemanyagszint>
+        <tankolni_kell> 1</tankolni_kell>
+        <evjarat>1999</evjarat>
+        <terhelhetoseg>1000</terhelhetoseg>
+    </jarmu>
+
+    <jarmu id="3001" kozpontid="1222">
+        <futasteljesitmeny>345254</futasteljesitmeny>
+        <uzemanyagszint>25</uzemanyagszint>
+        <tankolni_kell> 1</tankolni_kell> 
+        <evjarat>1987</evjarat>
+        <terhelhetoseg>1000</terhelhetoseg>
+    </jarmu>
+
+    <jarmu id="3002" kozpontid="1333">
+        <futasteljesitmeny>634524</futasteljesitmeny>
+        <uzemanyagszint>13</uzemanyagszint>
+        <tankolni_kell>1</tankolni_kell>
+         <evjarat>1968</evjarat>
+        <terhelhetoseg>1000</terhelhetoseg>
+    </jarmu>
+
+    <jarmu id="3003" kozpontid="1444">
+        <futasteljesitmeny>156158</futasteljesitmeny>
+        <uzemanyagszint>100</uzemanyagszint>
+        <tankolni_kell> 1</tankolni_kell>
+        <evjarat>1975</evjarat>
+        <terhelhetoseg>1000</terhelhetoseg>
+    </jarmu>
+
+    <jarmu id="3004" kozpontid="1555">
+        <futasteljesitmeny>784185</futasteljesitmeny>
+        <uzemanyagszint>90 </uzemanyagszint>
+        <tankolni_kell> 1</tankolni_kell>
+        <evjarat>1981</evjarat>
+        <terhelhetoseg>1000</terhelhetoseg>
+    </jarmu>
+</jarmuvek>
+<ajandekok>
+    <ajandek id="1345" kozpontid="1111">
+        <nev>Lego Kastély</nev>
+        <kategoria>Lego</kategoria>
+        <suly>13</suly>
+    </ajandek>
+
+    <ajandek id="1365" kozpontid ="1111">
+        <nev>Lego Barbie</nev>
+        <kategoria>Lego</kategoria>
+        <suly>18</suly>
+       
+    </ajandek>
+
+    <ajandek id="1745" kozpontid = "1555">
+        <nev>Baseball Ütő</nev>
+        <kategoria>Sport</kategoria>
+        <suly>83</suly>
+    </ajandek>
+
+    <ajandek id="1385" kozpontid="1555">
+        <nev>Golfütő</nev>
+        <kategoria>Sport</kategoria>
+        <suly>90</suly>
+    </ajandek>
+
+    <ajandek id="3345" kozpontid ="1444">
+        <nev>Xbox One</nev>
+        <kategoria>Xbox</kategoria>
+        <suly>30</suly>
+    </ajandek>
+</ajandekok>
+<gyermekek>
+    <gyermek id="9999">
+        <nev>Kádár Bálint</nev>
+        <koordinata>
+            <north>9000</north>
+            <west>2300</west>
+        </koordinata>
+       
+        <virgacs_kell>0</virgacs_kell>
+        <fiu_e>1</fiu_e>
+        <kor>21</kor>
+    </gyermek>
+
+    <gyermek id="9998">
+        <nev>Kiss Balázs</nev>
+        <koordinata>
+            <north>8500</north>
+            <west>2300</west>
+        </koordinata>
+      
+        <virgacs_kell>1</virgacs_kell>
+        <fiu_e>1</fiu_e>
+        <kor>5</kor>
+    </gyermek>
+
+    <gyermek id="9997">
+        <nev>Kovács Nóri</nev>
+        <koordinata>
+        <north>9000</north>
+        <west>1600</west>
+        </koordinata>
+        
+        <virgacs_kell>1</virgacs_kell>
+        <fiu_e>0</fiu_e>
+        <kor>28</kor>
+    </gyermek>
+
+    <gyermek id="9996">
+        <nev>Tóth Anna</nev>
+        <koordinata>
+        <north>6300</north>
+        <west>2800</west>
+        </koordinata>
+        <virgacs_kell>1</virgacs_kell>
+        <fiu_e>0</fiu_e>
+        <kor>26</kor>
+    </gyermek>
+
+    <gyermek id="9995">
+        <nev>Lenkei Márk</nev>
+        <koordinata>
+        <north>9000</north>
+        <west>2300</west>
+        </koordinata>
+        <virgacs_kell>1</virgacs_kell>
+        <fiu_e>1</fiu_e>
+        <kor>21</kor>
+    </gyermek>
+</gyermekek>
+<gyermekerdeklodesek>
+    <gyermekerdeklodes id="00" gyermekid="9999">
+        <kivansag>"Autók"</kivansag>
+    </gyermekerdeklodes>
+
+    <gyermekerdeklodes id="01" gyermekid ="9997">
+        <kivansag>"Babák"</kivansag>
+    </gyermekerdeklodes>
+
+    <gyermekerdeklodes id="02" gyermekid="9999">
+        <kivansag>"Lego"</kivansag>
+    </gyermekerdeklodes>
+    
+    <gyermekerdeklodes id="03" gyermekid="9995">
+        <kivansag>"Sport"</kivansag>
+    </gyermekerdeklodes>
+
+    <gyermekerdeklodes id="04" gyermekid ="9999">
+        <kivansag>"Xbox"</kivansag>
+    </gyermekerdeklodes>
+</gyermekerdeklodesek>
+<ajandek-gyermek_kapcsolo>
+    <kapcsolo ajandekID="1345" gyermekID="9999" /> 
+    <kapcsolo ajandekID="1385" gyermekID="9999" /> 
+    <kapcsolo ajandekID="1745" gyermekID="9999" /> 
+    <kapcsolo ajandekID="3345" gyermekID="9999" /> 
+    <kapcsolo ajandekID="1365" gyermekID="9997" /> 
+    <kapcsolo ajandekID="1365" gyermekID="9996" /> 
+    <kapcsolo ajandekID="1385" gyermekID="9998" /> 
+    <kapcsolo ajandekID="3345" gyermekID="9995" /> 
+</ajandek-gyermek_kapcsolo>
+
+
+</mikulaslogisztikaihivatal>

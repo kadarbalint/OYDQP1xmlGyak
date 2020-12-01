@@ -1,0 +1,218 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="mikulaslogisztikaihivatal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="kozpontok">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="kozpont" type="kozpont" minOccurs="0" maxOccurs="unbounded"  />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="pilotak">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pilota" type="pilota" minOccurs="0" maxOccurs="unbounded"  />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="jarmuvek">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="jarmu" type="jarmu" minOccurs="0" maxOccurs="unbounded"  />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="ajandekok">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ajandek" type="ajandek" minOccurs="0" maxOccurs="unbounded"  />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="gyermekek">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gyermek" type="gyermek" minOccurs="0" maxOccurs="unbounded"  />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="gyermekerdeklodesek">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gyermekerdeklodes" type="gyermekerdeklodes" minOccurs="0" maxOccurs="unbounded"  />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="ajandek-gyermek_kapcsolo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="kapcsolo" type="ajandek-gyermek" minOccurs="0" maxOccurs="unbounded"  />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      
+      </xs:sequence>
+    </xs:complexType>
+
+
+	<!-- key - keyref restrictions -->
+
+        <xs:key name="kozpontid">
+            <xs:selector xpath=".//kozpont" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        
+        <xs:keyref name="kozpontidref2" refer="kozpontid">
+        	<xs:selector xpath=".//ajandek"/>
+        	<xs:field xpath="@kozpontid"/>
+        </xs:keyref>
+        
+        <xs:keyref name="kozpontidref3" refer="kozpontid">
+        	<xs:selector xpath=".//jarmu"/>
+        	<xs:field xpath="@kozpontid"/>
+        </xs:keyref>
+       
+
+        <xs:key name="pilotaid">
+            <xs:selector xpath=".//pilota" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        
+
+        <xs:key name="jarmuid">
+            <xs:selector xpath=".//jarmu" />
+            <xs:field xpath="@id" />
+        </xs:key>
+
+        <xs:key name="ajandekid">
+            <xs:selector xpath=".//ajandek" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        <xs:keyref name="ajandekidref" refer="ajandekid">
+        <xs:selector xpath=".//kapcsolo"/>
+        <xs:field xpath="@ajandekID"/>
+        </xs:keyref>
+        
+
+        <xs:key name="gyermekid">
+            <xs:selector xpath=".//gyermek" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        <xs:keyref name="gyermekidref1" refer="gyermekid">
+            <xs:selector xpath=".//kapcsolo" />
+            <xs:field xpath="@gyermekID" />
+        </xs:keyref>
+        <xs:keyref name="gyermekidref2" refer="gyermekid">
+            <xs:selector xpath=".//gyermekerdeklodes" />
+            <xs:field xpath="@gyermekid" />
+        </xs:keyref>
+        
+        
+        <xs:key name="gyermekerdeklodesid">
+            <xs:selector xpath=".//gyermekerdeklodes" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        
+        
+        
+    </xs:element>
+	
+
+                                                      
+
+<xs:complexType name="kozpont">
+    <xs:sequence>
+      <xs:element name="szankokszama" type="xs:int" />
+        <xs:element name="lokacio" type="xs:string" />
+        <xs:element name="elerheto_e" type="xs:byte" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" use="required" />
+</xs:complexType>
+
+<xs:complexType name="pilota">
+    <xs:sequence>
+        <xs:element name="nev" type="xs:string" />
+        <xs:element name="repultido" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" use="required" />
+</xs:complexType>
+
+<xs:complexType name="jarmu">
+    <xs:sequence>
+        <xs:element name="futasteljesitmeny" type="xs:int" />
+        <xs:element name="uzemanyagszint" type="xs:int" />
+        <xs:element name="tankolni_kell" type="xs:byte" />
+        <xs:element name="evjarat" type="xs:int" />
+        <xs:element name="terhelhetoseg" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" use="required" />
+    <xs:attribute name="kozpontid" type="xs:int" use="required" />
+</xs:complexType>
+
+<xs:complexType name="ajandek">
+    <xs:sequence>
+        <xs:element name="nev" type="xs:string" />
+        <xs:element name="kategoria" type="xs:string" />
+        <xs:element name="suly" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" use="required" />
+    <xs:attribute name="kozpontid" type="xs:int" use="required" />
+
+</xs:complexType>
+
+<xs:complexType name="gyermek">
+    <xs:sequence>
+        <xs:element name="nev" type="xs:string" />
+        <xs:element name="koordinata" type="koordinata" />
+        <xs:element name="virgacs_kell" type="xs:byte" />
+        <xs:element name="fiu_e" type="xs:byte" />
+        <xs:element name="kor" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" use="required" />
+</xs:complexType>
+
+<xs:complexType name="gyermekerdeklodes">
+    <xs:sequence>
+        <xs:element name="kivansag" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" use="required" />
+    <xs:attribute name="gyermekid" type="xs:int" use="required" />
+
+</xs:complexType>
+
+<xs:complexType name="ajandek-gyermek">
+    <xs:attribute name="ajandekID" type="xs:int" use="required" />
+    <xs:attribute name="gyermekID" type="xs:int" use="required" />
+</xs:complexType>
+
+<xs:complexType name="koordinata">
+  <xs:sequence>
+      <xs:element name="north" >
+      <xs:simpleType>
+              <xs:restriction base="xs:int">
+                  <xs:minInclusive value="0"></xs:minInclusive>
+                  <xs:maxExclusive value="9999"></xs:maxExclusive>
+              </xs:restriction>
+          </xs:simpleType>
+       </xs:element>
+      <xs:element name="west">
+      <xs:simpleType>
+              <xs:restriction base="xs:int">
+                <xs:minInclusive value="0"></xs:minInclusive>
+                <xs:maxExclusive value="9999"></xs:maxExclusive>
+              </xs:restriction>
+          </xs:simpleType>
+      </xs:element>
+  </xs:sequence>
+</xs:complexType>
+
+
+</xs:schema>
